@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Omar Slaoui - Dentiste Esthétique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-color: #f0fdfa;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2314b8a6' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .instagram-card {
+            transition: transform 0.3s ease;
+        }
+        .instagram-card:hover {
+            transform: translateY(-5px);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-body text-gray-700">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-heading font-bold text-teal-700">Dr. Omar Slaoui</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-teal-700 hover:text-teal-500 font-medium">Accueil</a>
+                <a href="#about" class="text-gray-600 hover:text-teal-500 font-medium">À Propos</a>
+                <a href="#services" class="text-gray-600 hover:text-teal-500 font-medium">Services</a>
+                <a href="#gallery" class="text-gray-600 hover:text-teal-500 font-medium">Galerie</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-teal-500 font-medium">Témoignages</a>
+                <a href="#contact" class="text-gray-600 hover:text-teal-500 font-medium">Contact</a>
+            </nav>
+            <button class="md:hidden text-teal-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern pt-32 pb-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-teal-800 mb-4">Créer des Sourires Beaux et Sains</h2>
+                <p class="text-lg text-gray-600 mb-6">Spécialiste en Implantologie, Dentisterie Esthétique, Dentisterie Laser et Dentisterie Numérique.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">Prendre Rendez-vous</a>
+                    <a href="#services" class="border-2 border-teal-600 text-teal-600 hover:bg-teal-50 font-medium py-3 px-6 rounded-lg transition duration-300">Nos Services</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-teal-100 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                        <!-- Profile picture -->
+                        <img src="./him.webp" alt="Dr. Omar Slaoui" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-2 -right-4 bg-white py-2 px-4 rounded-lg shadow-md">
+                        <p class="text-teal-700 font-medium">Dr. Omar Slaoui</p>
+                        <p class="text-xs text-gray-500">5 878 abonnés</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-teal-800 mb-4">À Propos du Dr. Slaoui</h2>
+                <div class="h-1 w-20 bg-teal-500 mx-auto"></div>
+            </div>
+            <div class="max-w-3xl mx-auto text-lg text-gray-600 text-center">
+                <p class="mb-6">Le Dr Omar Slaoui est un dentiste esthétique hautement qualifié, spécialisé en implantologie, dentisterie esthétique, dentisterie laser et dentisterie numérique.</p>
+                <p class="mb-6">Avec un engagement envers l'excellence et les soins aux patients, le Dr Slaoui utilise les dernières technologies et techniques pour fournir des services dentaires exceptionnels.</p>
+                <p>Son cabinet est situé au 61, av Hassan 1er à Casablanca, où il accueille les patients souhaitant améliorer leur santé dentaire et obtenir de beaux sourires.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-teal-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-teal-800 mb-4">Nos Services</h2>
+                <div class="h-1 w-20 bg-teal-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-teal-600 mb-4">
+                        <i class="fas fa-tooth text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-teal-800 mb-3">Implantologie</h3>
+                    <p class="text-gray-600">Solutions avancées d'implants dentaires pour restaurer votre sourire et votre fonctionnalité.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-teal-600 mb-4">
+                        <i class="fas fa-smile text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-teal-800 mb-3">Dentisterie Esthétique</h3>
+                    <p class="text-gray-600">Améliorez votre sourire avec nos procédures de dentisterie esthétique incluant facettes et blanchiment.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-teal-600 mb-4">
+                        <i class="fas fa-laser text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-teal-800 mb-3">Dentisterie Laser</h3>
+                    <p class="text-gray-600">Traitements minimalement invasifs utilisant la technologie laser de pointe.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="text-teal-600 mb-4">
+                        <i class="fas fa-digital-tachograph text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-teal-800 mb-3">Dentisterie Numérique</h3>
+                    <p class="text-gray-600">Empreintes numériques précises et technologie CAD/CAM pour des restaurations parfaites.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-teal-800 mb-4">Galerie de Sourires</h2>
+                <div class="h-1 w-20 bg-teal-500 mx-auto"></div>
+                <p class="text-gray-600 mt-4">Découvrez les transformations étonnantes du cabinet du Dr Slaoui</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Gallery items will be dynamically generated from the data -->
+                <div class="instagram-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-teal-100 flex items-center justify-center">
+                        <img src="./files/1.jpg" alt="Transformation dentaire" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gray-600 text-sm">✨Life changing transformation by Dr Omar Slaoui. What do you think?  #dentist #dentistry #dental #smile #teeth #dentista #odontologia #dentalcare #tooth #dentalclinic #cosmeticdentistry #oralhealth #teethwhitening #orthodontics #veneers #dentalhygienist #dentalimplants #dentistryworld #dentalphotography #smilemakeover #doctor #dentalhygiene #dentalassistant #invisalign #braces #dentistlife #odonto #dentistrylife</p>
+                        <div class="flex items-center mt-3">
+                            <i class="fab fa-instagram text-teal-600 mr-2"></i>
+                            <span class="text-xs text-gray-500">Depuis Instagram</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="instagram-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-teal-100 flex items-center justify-center">
+                        <img src="./files/2.jpg" alt="Réhabilitation esthétique" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gray-600 text-sm">Réhabilitation esthétique des dents du bas .  #health #dentalstudent #dentalhealth #implant #smiledesign #oralsurgery #orthodontist #cosmeticdentist #implants #endodontics #dentistas #medical #surgery #dentallab #dentallife #ortodoncia #dentists #dentaloffice #klinikgigi #beauty #dentalart #dentaltechnician #odontologiaestetica #covid #oralhygiene #dentalschool #medicine #whiteteeth #morocco</p>
+                        <div class="flex items-center mt-3">
+                            <i class="fab fa-instagram text-teal-600 mr-2"></i>
+                            <span class="text-xs text-gray-500">Depuis Instagram</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="instagram-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-teal-100 flex items-center justify-center">
+                        <img src="./files/7.jpg" alt="Facettes dentaires" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gray-600 text-sm">Facettes dentaire#esthétique dentaire#Hollywood smile#Emax veneers #</p>
+                        <div class="flex items-center mt-3">
+                            <i class="fab fa-instagram text-teal-600 mr-2"></i>
+                            <span class="text-xs text-gray-500">Depuis Instagram</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="instagram-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-teal-100 flex items-center justify-center">
+                        <img src="./files/12.jpg" alt="Réhabilitation esthétique totale" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gray-600 text-sm">Réhabilitation esthétique totale #facettes#</p>
+                        <div class="flex items-center mt-3">
+                            <i class="fab fa-instagram text-teal-600 mr-2"></i>
+                            <span class="text-xs text-gray-500">Depuis Instagram</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://www.instagram.com/dr.omarslaoui/?hl=en" target="_blank" class="inline-flex items-center bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                    <i class="fab fa-instagram mr-2"></i>
+                    Suivre sur Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-teal-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-teal-800 mb-4">Témoignages de Patients</h2>
+                <div class="h-1 w-20 bg-teal-500 mx-auto"></div>
+            </div>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="text-teal-600 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Le Dr Slaoui a transformé mon sourire avec des facettes. Son attention aux détails et son approche douce ont rendu tout le processus confortable."</p>
+                    <p class="font-medium text-teal-700">- Fatima Z.</p>
+                </div>
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="text-teal-600 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"La procédure d'implant dentaire s'est déroulée sans problème grâce à l'expertise du Dr Slaoui. Je peux maintenant manger et sourire en toute confiance !"</p>
+                    <p class="font-medium text-teal-700">- Karim M.</p>
+                </div>
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="text-teal-600 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"J'ai eu une transformation complète de mon sourire avec le Dr Slaoui. Les résultats sont incroyables - naturels et exactement ce que je voulais."</p>
+                    <p class="font-medium text-teal-700">- Leila R.</p>
+                </div>
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="text-teal-600 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Le traitement de dentisterie laser était indolore et rapide. Le Dr Slaoui utilise la technologie la plus récente pour les meilleurs résultats."</p>
+                    <p class="font-medium text-teal-700">- Ahmed T.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-teal-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Contactez-nous</h2>
+                <div class="h-1 w-20 bg-teal-500 mx-auto"></div>
+            </div>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-heading font-semibold mb-4">Prenez Contact</h3>
+                    <div class="mb-6">
+                        <div class="flex items-start mb-4">
+                            <div class="text-teal-300 mr-3 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p>61, av Hassan 1er, Casablanca</p>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="text-teal-300 mr-3">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <p>0522 265473</p>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="text-teal-300 mr-3">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <p>+212 726-112001</p>
+                        </div>
+                    </div>
+                    <div class="bg-teal-700 p-4 rounded-lg mb-6">
+                        <h4 class="font-medium mb-2">Heures d'Ouverture</h4>
+                        <p class="mb-1">Lundi - Vendredi: 9h00 - 18h00</p>
+                        <p>Samedi: 9h00 - 13h00</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-gray-800">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2531.5108713864397!2d-7.620629!3d33.59442099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d3555bc21527%3A0xe673ee702a863a47!2sCabinet%20Dentaire%20Docteur%20Omar%20Slaoui%20-%20Dentiste%20Centre%20Ville%20Casablanca!5e1!3m2!1sen!2sma!4v1759062259595!5m2!1sen!2sma" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-1">Nom Complet</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 rounded text-gray-800">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-1">Adresse Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 rounded text-gray-800">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-1">Numéro de Téléphone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 rounded text-gray-800">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 rounded text-gray-800"></textarea>
+                        </div>
+                        <button type="submit" class="bg-white text-teal-800 font-medium py-2 px-6 rounded-lg hover:bg-teal-100 transition duration-300">Envoyer le Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-2xl font-heading font-bold">Dr. Omar Slaoui</h3>
+                    <p class="text-teal-200">Dentiste Esthétique</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/dr.omarslaoui/?hl=en" target="_blank" class="text-teal-200 hover:text-white">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-teal-200 hover:text-white">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-teal-200 hover:text-white">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-teal-800 mt-6 pt-6 text-center text-sm text-teal-300">
+                <p>© 2023 Dr. Omar Slaoui. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
